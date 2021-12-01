@@ -7,8 +7,7 @@ fun main() {
 
     fun part2(input: List<Int>): Int {
         return input
-            .windowed(3)
-            .map { it.sum() }
+            .windowed(3) { it.sum() }
             .zipWithNext()
             .count { (a, b) -> b > a }
     }
