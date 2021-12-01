@@ -16,4 +16,10 @@ tasks {
     wrapper {
         gradleVersion = "7.3"
     }
+
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
 }
