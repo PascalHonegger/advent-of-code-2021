@@ -12,12 +12,11 @@ fun main() {
             .count { (a, b) -> b > a }
     }
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test").map { it.toInt() }
+    val testInput = readInputAsInts("Day01_test")
     check(part1(testInput) == 7)
     check(part2(testInput) == 5)
 
-    val input = readInput("Day01").map { it.toInt() }
+    val input = readInputAsInts("Day01")
     println(part1(input))
     println(part2(input))
 }

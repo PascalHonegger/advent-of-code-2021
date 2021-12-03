@@ -1,10 +1,10 @@
-sealed interface Direction
+private sealed interface Direction
 
-data class Forward(val amount: Int) : Direction
-data class Down(val amount: Int) : Direction
-data class Up(val amount: Int) : Direction
+private data class Forward(val amount: Int) : Direction
+private data class Down(val amount: Int) : Direction
+private data class Up(val amount: Int) : Direction
 
-data class Steering(
+private data class Steering(
     val depth: Int = 0,
     val horizontal: Int = 0,
     val aim: Int = 0
@@ -49,7 +49,6 @@ fun main() {
             }.total
     }
 
-    // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day02_test")
     check(part1(testInput) == 150)
     check(part2(testInput) == 900)
