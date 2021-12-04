@@ -13,6 +13,12 @@ fun readInput(name: String) = File("src", "$name.txt").readLines()
 fun readInputAsInts(name: String) = readInput(name).map { it.toInt() }
 
 /**
+ * Split a string into ints.
+ */
+fun String.splitAsInts(delimiter: Char): List<Int> =
+    split(delimiter).filter { it.isNotBlank() }.map { it.trim().toInt() }
+
+/**
  * Converts string to md5 hash.
  */
 fun String.md5(): String = BigInteger(
