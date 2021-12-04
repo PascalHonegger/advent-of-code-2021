@@ -2,7 +2,7 @@ private typealias Bingo = List<IntArray>
 
 private fun List<String>.toBingos(): List<Bingo> {
     return filter { it.isNotEmpty() }
-        .windowed(size = 5, step = 5) { rows ->
+        .chunked(5) { rows ->
             rows.map { it.splitAsInts(' ').toIntArray() }
         }
 }
