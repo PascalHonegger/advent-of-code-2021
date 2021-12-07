@@ -13,6 +13,12 @@ fun readInput(name: String) = File("src", "$name.txt").readLines()
 fun readWholeInput(name: String) = File("src", "$name.txt").readText()
 
 /**
+ * Reads whole text from the given input txt file.
+ */
+fun readWholeInputAsInts(name: String, delimiter: Char) =
+    readWholeInput(name).splitAsInts(delimiter)
+
+/**
  * Reads one int per line from the given input txt file.
  */
 fun readInputAsInts(name: String) = readInput(name).map { it.toInt() }

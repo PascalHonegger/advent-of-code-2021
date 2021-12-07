@@ -13,11 +13,11 @@ fun main() {
         return lanternFish.sum()
     }
 
-    val testInput = readWholeInput("Day06_test").splitAsInts(',')
+    val testInput = readWholeInputAsInts("Day06_test", ',')
     check(simulateLanternFish(testInput, 80) == 5934L)
     check(simulateLanternFish(testInput, 256) == 26984457539L)
 
-    val input = readWholeInput("Day06").splitAsInts(',')
+    val input = readWholeInputAsInts("Day06", ',')
     println(simulateLanternFish(input, 80))
     println(simulateLanternFish(input, 256))
 }
