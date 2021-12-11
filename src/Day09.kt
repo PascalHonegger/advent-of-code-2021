@@ -65,7 +65,7 @@ fun main() {
             .values
             .sortedDescending()
             .take(3)
-            .reduce { a, b -> a * b }
+            .product()
     }
 
     val testInput = readInput("Day09_test")

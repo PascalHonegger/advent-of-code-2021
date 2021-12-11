@@ -36,3 +36,8 @@ fun String.md5(): String = BigInteger(
     1,
     MessageDigest.getInstance("MD5").digest(toByteArray())
 ).toString(16)
+
+/**
+ * Calculate product by multiplying all elements together
+ */
+fun Iterable<Int>.product() = reduce(Int::times)
