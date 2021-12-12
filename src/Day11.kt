@@ -1,27 +1,27 @@
-private class DumboOctopus(
-    var energyLevel: Int,
-    var neighbours: List<DumboOctopus> = mutableListOf(),
-) {
-    fun resetFlash(): Boolean {
-        return if (energyLevel > 9) {
-            energyLevel = 0
-            true
-        } else {
-            false
-        }
-    }
-
-    fun increase() {
-        energyLevel++
-        if (energyLevel == 10) {
-            neighbours.forEach { it.increase() }
-        }
-    }
-
-    override fun toString() = energyLevel.toString()
-}
-
 fun main() {
+    class DumboOctopus(
+        var energyLevel: Int,
+        var neighbours: List<DumboOctopus> = emptyList(),
+    ) {
+        fun resetFlash(): Boolean {
+            return if (energyLevel > 9) {
+                energyLevel = 0
+                true
+            } else {
+                false
+            }
+        }
+
+        fun increase() {
+            energyLevel++
+            if (energyLevel == 10) {
+                neighbours.forEach { it.increase() }
+            }
+        }
+
+        override fun toString() = energyLevel.toString()
+    }
+
     fun List<String>.toOctopuses(): List<DumboOctopus> {
         val dumboOctopuses = flatMap { row -> row.map { DumboOctopus(it.digitToInt()) } }
         dumboOctopuses.forEachIndexed { index, dumboOctopus ->
